@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LA LIGA NEO EGOISTA</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <h1 class="title">LA LIGA NEO EGOISTA</h1>
+
+    <div class="buttons">
+      <div class="left-buttons">
+        <a href="https://discord.gg/ky43xJNfkf" target="_blank" class="btn glass">Discord</a>
+      </div>
+
+      <div class="center-buttons">
+        <a href="#" class="btn neon main" id="openModal">INSCREVER SEU TIME</a>
+      </div>
+
+      <div class="right-buttons">
+        <a href="https://www.tiktok.com/@wiltz.yrx" target="_blank">
+          <img src="assets/logos/tiktok.png" alt="TikTok" class="icon" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Inscrever Seu Time</h2>
+      <form id="teamForm">
+        <label>Nome Do Time:<input type="text" name="teamName" required /></label>
+        <label>Capitão (Usuário e ID do Discord):<input type="text" name="captain" required /></label>
+        <label>Membros (Usuário e ID do Discord):<textarea name="members" rows="4" required></textarea></label>
+        <button type="submit" class="btn neon main">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
