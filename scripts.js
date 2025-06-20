@@ -1,30 +1,22 @@
-particlesJS.load("particles-js","particles-config.json",()=>{});
+// Partículas
+particlesJS.load("particles-js", "particles-config.json", () => {});
 
-const openModal = document.getElementById("openModal"),
-      modal = document.getElementById("modal"),
-      closeModal = document.getElementById("closeModal"),
-      form = document.getElementById("teamForm");
+// Animação da caixa de logs baseada na posição do mouse
+const logsBox = document.getElementById("logsBox");
 
-openModal.addEventListener("click", e => {
-  e.preventDefault();
-  modal.style.display = "flex";
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 30;
+  const y = (e.clientY / window.innerHeight - 0.5) * -30;
+
+  logsBox.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
 });
 
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+const ownersBox = document.getElementById("ownersBox");
 
-window.addEventListener("click", e => {
-  if (e.target === modal) modal.style.display = "none";
-});
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 30;
+  const y = (e.clientY / window.innerHeight - 0.5) * -30;
 
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  const t = form.teamName.value,
-        c = form.captain.value,
-        m = form.members.value.trim().replace(/\r?\n/g, ', ');
-  const subject = encodeURIComponent(`Inscrição: ${t}`),
-        body = encodeURIComponent(`Nome do Time: ${t}\nCapitão: ${c}\nMembros: ${m}`);
-  window.location.href = `mailto:opeka.o.un1c0@gmail.com?subject=${subject}&body=${body}`;
-  modal.style.display = "none";
+  logsBox.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+  ownersBox.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
 });
